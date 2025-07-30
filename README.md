@@ -2,15 +2,21 @@
 
 command: npm install
 
--Segundo paso: Correr la aplicación completa
+-Segundo paso crearemos el contenedor docker para postgre:
+docker run --network=bridge --name postgreSQLContainer -e POSTGRES_PASSWORD=12345 -p 5432:5432 -d postgres
+
+Creamos el contenedor docker de la aplicación inventario productos: 
+
+docker build -t productimage . docker run --network=bridge -p 3001:3001 -d productimage
+
+-Tercer paso: Correr la aplicación completa
 
 command: npm run start-application
 
 
 ----Comentarios Extras
 
-Me gustaría añadir que, al ejecutar la aplicación con el último comando, es necesario esperar a que el servidor se ejecute correctamente antes de empezar a usar el frontend.
 
-Versiones: Uso la versión 20.12.2 de Node.js; el puerto para el frontend es 4000 y el puerto para el backend es 3001.
+Versiones: Uso la versión 20.12.2 de Node.js; el puerto para el frontend es 4000, el puerto para el backend es 3002 y el puerto 3001 es para docker.
 
 

@@ -5,9 +5,9 @@ import './App.css';
 
 export const App = () => {
   const [producto, setProducto] = useState({
-    nombre: '',
-    precio: 0.0,
-    stock: 0
+    nombre: null,
+    precio: null,
+    stock: null
   });
 
   const [productos, setProductos] = useState([]);
@@ -101,7 +101,7 @@ export const App = () => {
           </label>
         </div>
 
-        <button className="formulario__boton" type="submit">
+        <button className="formulario__boton" type="submit" hidden={!producto.nombre|| !producto.precio || !producto.stock}>
           Guardar Producto
         </button>
 

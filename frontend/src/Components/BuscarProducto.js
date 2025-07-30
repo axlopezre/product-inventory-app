@@ -26,7 +26,7 @@ const BuscarProducto = () => {
         value={nombreBusqueda}
         onChange={(e) => setNombreBusqueda(e.target.value)}
       />
-      <button onClick={buscarProducto}>Buscar</button>
+      <button onClick={buscarProducto} hidden={!nombreBusqueda}>Buscar</button>
 
       {errorBusqueda && <p style={{ color: 'red' }}>{errorBusqueda}</p>}
 
