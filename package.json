@@ -1,0 +1,26 @@
+{
+  "name": "challenge",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "server": "cd backendd && npm install && npm start",
+    "client": "cd frontend && npm install && npm start",
+    "start-application": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\" "
+  },
+  "author": "Axel Lopez Renteria",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.1.0",
+    "axios": "^1.9.0",
+    "concurrently": "^8.2.2",
+    "puppeteer-core": "^24.8.2"
+  }
+}

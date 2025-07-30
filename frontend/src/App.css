@@ -1,0 +1,85 @@
+.formulario {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #f7f9fc;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.formulario__titulo {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
+}
+
+.formulario__grupo {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario__grupo label {
+  margin-bottom: 6px;
+  color: #555;
+  font-weight: 500;
+}
+
+.formulario__grupo input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.formulario__grupo input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 3px #4caf50;
+}
+
+.formulario__boton {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario__boton:hover {
+  background-color: #43a047;
+}
+
+.lista-productos table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.lista-productos th,
+.lista-productos td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.lista-productos thead {
+  background-color: #007bff;
+  color: white;
+}
+
+.lista-productos tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.lista-productos tbody tr:hover {
+  background-color: #d1e7ff;
+  cursor: pointer;
+}
