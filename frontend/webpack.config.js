@@ -1,27 +1,35 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./src/index.html",
-  filename: "./index.html",
-});
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-  mode: "development",
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.[contenthash].js',
+    publicPath: '/',
+    clean: true
+  },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        },
+        use: { loader: 'babel-loader' }
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      },
-    ],
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']   // quita si no usas CSS
+      }
+    ]
   },
-  plugins: [htmlPlugin],
-  devServer: {
-    port: 4000,
-  }
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/index.html'),
+      // aseguramos que haya un div#app
+    })
+  ],
+  mode: 'production' // tu script --mode=production también funciona
 };
